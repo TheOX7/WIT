@@ -1,4 +1,5 @@
-pandas
-streamlit
-numpy
 joblib
+pandas
+numpy
+altair
+streamlit
