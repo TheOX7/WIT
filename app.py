@@ -88,8 +88,8 @@ with tab_2:
 
     
 with tab_3 :
-    model = open('model_predict_income.joblib', 'rb')
-    predict = pickle.load(model) 
+    pickle_in = open('model_predict_income.joblib', 'rb')
+    model = pickle.load(pickle_in) 
 
     st.subheader('Predict Students Income')
     
