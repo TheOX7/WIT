@@ -1,8 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pickle 
-# import joblib
+import joblib
 import altair as alt
 
 st.set_page_config(
@@ -88,8 +87,8 @@ with tab_2:
 
     
 with tab_3 :
-    pickle_in = open('model_predict_income.joblib', 'rb')
-    model = pickle.load(pickle_in) 
+    joblib_in = open('model_predict_income.joblib', 'rb')
+    model = joblib.load(joblib_in) 
 
     st.subheader('Predict Students Income')
     
