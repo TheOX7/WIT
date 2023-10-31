@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+# import joblib
 import altair as alt
 
 st.set_page_config(
@@ -87,7 +87,7 @@ with tab_2:
 
     
 with tab_3 :
-    model = joblib.load('model_predict_income.joblib')
+    model = ('model_predict_income.joblib')
     st.subheader('Predict Students Income')
     
     # Mapping Gender
