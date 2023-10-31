@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 # import joblib
-import openpyxl
 import altair as alt
 
 st.set_page_config(
