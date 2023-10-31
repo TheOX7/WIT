@@ -19,7 +19,7 @@ st.markdown(f'GitHub Repository : {url_repo}', unsafe_allow_html=True)
 
 st.write('____________')
 
-df = pd.read_csv('WIT_2.csv', sep=';')
+df = pd.read_csv('WIT_3.csv', sep=';')
 df = df.set_index(df.index + 1)
 
 tab_1, tab_2, tab_3 = st.tabs(['Dataset Overview', 'Dataset Insights', 'Predict Income'])
@@ -87,7 +87,7 @@ with tab_2:
 
     
 with tab_3 :
-    model = ('model_predict_income.joblib')
+    model = open('model_predict_income.joblib', 'rb')
     st.subheader('Predict Students Income')
     
     # Mapping Gender
