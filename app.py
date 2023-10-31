@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+# import joblib
 import altair as alt
 
 st.set_page_config(
@@ -19,7 +19,7 @@ st.markdown(f'GitHub Repository : {url_repo}', unsafe_allow_html=True)
 
 st.write('____________')
 
-df = pd.read_csv('WIT_3.csv', sep=';')
+df = pd.read_excel('WIT_2.xlsx')
 df = df.set_index(df.index + 1)
 
 tab_1, tab_2, tab_3 = st.tabs(['Dataset Overview', 'Dataset Insights', 'Predict Income'])
@@ -87,8 +87,8 @@ with tab_2:
 
     
 with tab_3 :
-    joblib_in = open('model_predict_income.joblib')
-    model = joblib.load(joblib_in) 
+    # joblib_in = open('model_predict_income.joblib')
+    model = ("model_predict_income.joblib") 
 
     st.subheader('Predict Students Income')
     
