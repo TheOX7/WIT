@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import pickle 
 # import joblib
 import altair as alt
 
@@ -88,6 +89,8 @@ with tab_2:
     
 with tab_3 :
     model = open('model_predict_income.joblib', 'rb')
+    predict = pickle.load(model) 
+
     st.subheader('Predict Students Income')
     
     # Mapping Gender
