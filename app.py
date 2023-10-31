@@ -87,7 +87,7 @@ with tab_2:
 
     
 with tab_3 :
-    joblib_in = open('model_predict_income.joblib', 'rb')
+    joblib_in = open('model_predict_income.joblib')
     model = joblib.load(joblib_in) 
 
     st.subheader('Predict Students Income')
