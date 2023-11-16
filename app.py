@@ -19,7 +19,7 @@ st.markdown(f'GitHub Repository : {url_repo}', unsafe_allow_html=True)
 
 st.write('____________')
 
-df = pd.read_excel('WIT_2.xlsx', dtype=object)
+df = pd.read_excel('WIT_2.xlsx')
 df = df.set_index(df.index + 1)
 
 tab_1, tab_2, tab_3 = st.tabs(['Dataset Overview', 'Dataset Insights', 'Predict Income'])
@@ -47,7 +47,14 @@ with tab_2:
         color=alt.Color("Color:N", scale=alt.Scale(domain=["Biru", "Pink"], range=["blue", "pink"]))
     )
     st.altair_chart(chart, use_container_width=True)
-
+    st.markdown('**Insight** :')
+    st.write("""
+            Berdasarkan barchart diatas, dapat dilihat bahwa jumlah mahasiswa dengan jenis kelamin Laki-laki lebih banyak dibandingkan Perempuan.
+            \nDimana jumlah Laki-laki sebanyak 18 mahasiswa, sedangkan perempuan sebanyak 6 mahasiswi.
+            """)
+    
+    st.write("____")
+    
     # Scatterplot Persebaran Pendapatan
     st.subheader("Persebaran Pendapatan Mahasiswa")
     scatter = alt.Chart(df).mark_circle(size=100).encode(
@@ -58,6 +65,15 @@ with tab_2:
     )
 
     st.altair_chart(scatter, use_container_width=True)
+    st.markdown('**Insight** :')
+    st.write("""
+            Berdasarkan scatterplot diatas, dapat dilihat bahwa persebaran pendapatan mahasiswa sangat bervariasi dengan range pendapatan dari 1.5 s/d 3 juta rupiah.
+            \nDapat dilihat juga bahwa NRP 2173027 yaitu Daryl Lesmana merupakan mahasiswa dengan pendapatan tertinggi yaitu di angka 3 juta rupiah.
+            Sedangkan NRP 2173003, 2173012, 2173014, dan 2173028 merupakan mahasiwa dengan pendapatan terendah yaitu di angka 1.5 juta rupiah 
+            """)
+    
+    st.write("____")
+    
     
     # Barchart perbandingan kota
     st.subheader("Perbandingan Jumlah Asal Kota Mahasiswa")
@@ -83,7 +99,13 @@ with tab_2:
         color=alt.Color("Kota:N", scale=alt.Scale(range=list(city_colors.values())))
     )
     st.altair_chart(chart_city, use_container_width=True)
+    st.markdown('**Insight** :')
+    st.write("""
+            Berdasarkan barchart diatas, dapat dilihat bahwa Kota Bandung dan Kota Cirebon merupakan dua asal kota mahasiswa terbanyak yaitu di angka 10 dan 5 mahasiswa.
+            \nSedangkan kota-kota sisanya memilliki mahasiswa yang berasal dari kota tersebut sebanyak satu dan dua saja.
+            """)
     
+    st.write("____")
 
     
 with tab_3 :
